@@ -3,6 +3,10 @@
   padding: 0;
   margin: 0;
 }
+.root,
+.grow {
+  flex-grow: 1
+}
 #container {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -43,4 +47,7 @@
   margin: 0;
   height: 50px;
   padding: 5px;
+}
+.appbar {
+  padding: 10px 20px;
 }
