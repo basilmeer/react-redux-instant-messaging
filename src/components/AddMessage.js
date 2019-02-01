@@ -13,6 +13,7 @@ const AddMessage = props => {
           }
         }}
         type="text"
+        placeholder="Type your message and press 'Enter'"
         ref={node => {
           input = node;
         }}

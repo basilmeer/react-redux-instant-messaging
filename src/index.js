@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import "./index.css";
 
@@ -15,8 +15,11 @@ import username from "./utils/name";
 // Set up the Saga middleware instancee
 const sagaMiddleware = createSagaMiddleware();
 
+// Allow the usage of Redux DevTools
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 // Create a Store by passing in the reducers Reducer
-const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)));
 
 // Set up the socket
 const socket = setupSocket(store.dispatch, username);

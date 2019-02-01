@@ -2,6 +2,10 @@
   "name": "react-redux-chat",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.4.1",
+    "node": "9.5.0"
+  },
   "dependencies": {
     "@material-ui/core": "^3.9.1",
     "chance": "^1.0.18",

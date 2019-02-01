@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,700");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
+body {
+  background: #fafafa;
+  font-family: "Source Sans Pro";
+}
+
+.root,
+.grow {
+  flex-grow: 1;
+}
+
 #container {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -10,37 +23,109 @@
   width: 100vw;
   height: 100vh;
 }
+
 #main {
   grid-area: main;
 }
-#new-message {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 5px;
-  margin-left: 0px;
-  border-top: 1px solid #3f3f3f;
-}
+
 #messages-list {
   padding: 5px 0 0 5px;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
-#sidebar {
+
+.sidebar {
   grid-area: sidebar;
-  padding: 5px 0 0 5px;
-  border-right: 1px solid #3f3f3f;
+  padding: 15px 0 0 15px;
+  border-right: 1px solid #ccc;
+  background: white;
   height: 100%;
+  position: fixed;
+  width: 16.7%;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.sidebar ul {
+  list-style: none;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 5px;
+}
+
+.sidebar p.users-online-text {
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #888888;
+  font-size: 14px;
+  border-bottom: 1px solid #d7d7d7;
+  width: 90%;
+  padding-bottom: 10px;
+}
+
+.sidebar ul li.user-name {
+  color: #636363;
 }
 
 #new-message {
+  position: fixed;
+  bottom: 10px;
+  width: 80%;
   padding: 0px;
   height: 50px;
+  margin-left: 20px;
+  border: none;
 }
 
 #new-message input {
-  font-family: "Press Start 2P";
+  font-size: 14px;
   width: 100%;
   height: 100%;
   margin: 0;
   height: 50px;
-  padding: 5px;
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+#new-message input::placeholder {
+  font-weight: 100;
+  color: #ccc;
+}
+
+.appbar {
+  padding: 10px 20px;
+}
+
+.message-display {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.message-display .message-avatar,
+.message-display .message-message {
+  display: inline-flex;
+}
+
+.message-display .message-avatar {
+  margin-right: 20px;
+}
+
+.message-display .message-message {
+  width: 100%;
+}
+
+.message-display .message-message .message-paper {
+  width: 100%;
+  padding: 10px;
+}
+
+.message-display .message-message p {
+  margin: 0;
+  font-size: 14px;
 }
