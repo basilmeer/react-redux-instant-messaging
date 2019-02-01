@@ -10,7 +10,7 @@ const users = [];
 // Set up a broadcast
 const broadcast = (data, ws) => {
   wss.clients.forEach(client => {
-    if (client.readyState === WebSocket.OPEN && client !== wss) {
+    if (client.readyState === WebSocket.OPEN && client !== ws) {
       client.send(JSON.stringify(data));
     }
   });
@@ -24,6 +24,8 @@ wss.on("connection", ws => {
   ws.on("message", message => {
     // Parse the message
     const data = JSON.parse(message);
+    // Log the message
+    console.log(data);
     // Handle different actions
     switch (data.type) {
       case "ADD_USER": {
