@@ -7,9 +7,9 @@ import { AddMessage } from "./containers/AddMessage";
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
+
 // Set up the App component
 class App extends Component {
-  
   // Render a generic layout
   render() {
     return (
@@ -19,11 +19,11 @@ class App extends Component {
             React and Redux Chat
           </Typography>
         </AppBar>
-        <Grid container spacing={24}>
+        <Grid container spacing={5}>
           <Grid item sm={2}>
             <Sidebar />
           </Grid>
-          <Grid item sm={1}>
+          <Grid item sm={10}>
             <section id="main">
               <MessagesList />
               <AddMessage />
