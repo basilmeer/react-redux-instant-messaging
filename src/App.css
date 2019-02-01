@@ -129,3 +129,10 @@ body {
   margin: 0;
   font-size: 14px;
 }
+
+.message-display .message-message p#author {
+  margin: 0;
+  font-size: 14px;
+  color: #8f8f8f;
+  font-weight: 800;
+}

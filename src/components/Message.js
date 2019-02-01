@@ -13,10 +13,8 @@ const Message = ({ message, author }) => (
     </div>
     <div className="message-message">
       <Paper className="message-paper">
-        <p>
-          {/* <i>{author}</i>:  */}
-          {message}
-        </p>
+        <p id="author">{author}:</p>
+        <p id="message">{message}</p>
       </Paper>
     </div>
   </div>
