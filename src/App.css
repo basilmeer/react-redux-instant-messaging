@@ -29,14 +29,14 @@ body {
 }
 
 #messages-list {
-  padding: 5px 0 0 5px;
+  padding: 5px 0 0 0;
   max-height: 80vh;
   overflow-y: scroll;
 }
 
 .sidebar {
   grid-area: sidebar;
-  padding: 15px 0 0 15px;
+  padding: 15px 0 0 0;
   border-right: 1px solid #ccc;
   background: white;
   height: 100%;
@@ -51,21 +51,35 @@ body {
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 1px;
-  padding: 5px;
+  padding-top: 10px;
+}
+
+.sidebar ul li.online-user {
+  transition: 0.2s;
+}
+
+.sidebar ul li.online-user:hover {
+  background-color: rgb(243, 242, 242);
+  transition: 0.2s;
 }
 
 .sidebar p.users-online-text {
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: #888888;
-  font-size: 14px;
   border-bottom: 1px solid #d7d7d7;
-  width: 90%;
+  width: 85%;
   padding-bottom: 10px;
+  margin-left: 15px;
 }
 
-.sidebar ul li.user-name {
+.sidebar ul li.online-user {
+  display: flex;
+  flex-flow: row nowrap;
   color: #636363;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.sidebar ul li.online-user .online-user-name {
+  margin-left: 10px;
 }
 
 #new-message {
@@ -100,10 +114,16 @@ body {
 }
 
 .message-display {
-  padding: 15px;
+  padding: 15px 0;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  transition: 0.2s;
+}
+
+.message-display:hover {
+  background-color: rgb(243, 242, 242);
+  transition: 0.2s;
 }
 
 .message-display .message-avatar,
@@ -113,6 +133,7 @@ body {
 
 .message-display .message-avatar {
   margin-right: 20px;
+  margin-left: 15px;
 }
 
 .message-display .message-message {
@@ -120,7 +141,7 @@ body {
 }
 
 .message-display .message-message .message-paper {
-  width: 100%;
+  width: 98.4%;
   padding: 10px;
 }
 
