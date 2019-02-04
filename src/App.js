@@ -20,10 +20,10 @@ class App extends Component {
           </Typography>
         </AppBar>
         <Grid container spacing={5}>
-          <Grid item sm={2}>
+          <Grid item sm={3} md={2}>
             <Sidebar />
           </Grid>
-          <Grid item sm={10}>
+          <Grid item sm={9} md={10}>
             <section id="main">
               <MessagesList />
               <AddMessage />
