@@ -1,13 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
+let randomProfilePic;
+
+let fetchRandomProfilePic = () => {
+  axios
+    .get("https://randomuser.me/api/")
+    .then(response => response.data.results[0].picture.thumbnail);
+};
+
+fetchRandomProfilePic();
+
 const Sidebar = ({ users }) => (
   <aside id="sidebar" className="sidebar">
     <Typography variant="overline">
-      <p class="users-online-text">Users Online:</p>
+      <p class="users-online-text">Users Online</p>
     </Typography>
     <ul>
       {users.map(user => (
