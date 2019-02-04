@@ -10,6 +10,7 @@
     "@material-ui/core": "^3.9.1",
     "axios": "^0.18.0",
     "chance": "^1.0.18",
+    "express": "^4.16.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
