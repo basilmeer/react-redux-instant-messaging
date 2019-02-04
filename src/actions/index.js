@@ -1,8 +1,8 @@
-import * as types from '../constants/ActionTypes';
+import * as types from "../constants/ActionTypes";
 
 /** Set up the Actions */
 let nextMessageId = 0;
-const nextUserId = 0;
+let nextUserId = 0;
 
 // Action: Add Message
 export const addMessage = (message, author) => ({
